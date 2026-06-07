@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Mời Tốt Nghiệp — Hiền Lương</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="splashScreen" class="splash">
+  <div class="splash-petals" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="splash-box">
+    <div class="splash-logo"></div>
+    <p class="splash-sub">Trường Đại học Thương Mại · 1960</p>
+    <p class="splash-name">Hiền Lương</p>
+    <p class="splash-degree">Cử nhân ngành Hệ thống thông tin quản lý</p>
+    <button id="splashBtn" class="splash-btn">✉ Mở thiệp mời</button>
+  </div>
+  </div>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="audio/cam-on-nguoi-da-thuc-cung-toi-phung-khanh-linh-nhacchuongwow.com.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Nút điều khiển nhạc -->
+  <button id="musicBtn" class="music-btn" aria-label="Tắt/bật nhạc" title="Tắt/bật nhạc">
+    🎵
+  </button>
+  <!-- Floating petals decoration -->
+  <div class="petals" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Side scroll-spy nav -->
+  <nav class="nav-dots" aria-label="Điều hướng trang">
+    <button data-page="1" class="active" title="Trang chủ"></button>
+    <button data-page="2" title="Hành trình 4 năm"></button>
+    <button data-page="3" title="Thiệp mời"></button>
+    <button data-page="4" title="Đếm ngược"></button>
+    <button data-page="5" title="Bản đồ"></button>
+    <button data-page="6" title="Lời chúc"></button>
+  </nav>
+
+  <main id="pages">
+   <div class="logo"></div>
+    <!-- ============== PAGE 1: HERO ============== -->
+    <section class="page page--home" id="page-1" data-page="1">
+      <h1 class="hero-title">HAPPY GRADUATION</h1>
+      <div class="home-card">
+        <div class="home-card__inner">
+          <div class="home-card__front">
+            
+            <div class="invite-demo" id="homeCard" role="button" tabindex="0" aria-label="Nhấn để mở thiệp">
+              <div class="env-flap-inner"></div>
+              <div class="env-bottom-inner"></div>
+              <div class="env-seal-inner"><span>Graduation<br/>Invitation</span></div>
+              <p class="env-foryou-inner">for you ♡</p>
+              <a class="env-tap-inner" href="#" role="button" tabindex="0" aria-label="Tap to open">✉ Tap to open</a>
+            </div>
+            
+            <div class="graduate-info">
+              <a>Hiền Lương</a><h2>Cử nhân ngành Hệ thống thông tin quản lý<br>Khép lại hành trình 4 năm học tại TMU</br></h2>
+              <p>Cảm ơn cả nhà đã xuất hiện trên hành trình này💔 </p>
+            </div>
+          
+            <div class="graduate-photo"></div>
+          </div>
+        </div>
+        <div class="home-card__back">
+          <p>Mở thiệp...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+        <small>Cuộn xuống</small>
+      </div>
+    </section>
+
+    <!-- ============== PAGE 2: JOURNEY ============== -->
+    <section class="page page--journey" id="page-2" data-page="2">
+      <header class="page-header">
+        <p class="eyebrow">Hành trình</p>
+        <h2>Bốn năm cùng </h2><h2>Đại học Thương Mại</h2>
+        <p class="lead">"Kỷ niệm không giữ chân chúng ta, mà nhắc ta đã đi được bao xa"</p>
+      </header>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-photo">
+            <img src="images/năm1.jpg" alt="Năm nhất" onerror="this.parentElement.classList.add('placeholder');this.style.display='none';" />
+            <span class="timeline-year">2023</span>
+          </div>
+          <div class="timeline-text">
+            <h3>Năm nhất</h3>
+            <p>Bước chân vào giảng đường với bao ước mơ và tham vọng.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reverse">
+          <div class="timeline-photo">
+            <img src="images/năm 2.jpg" alt="Năm hai" onerror="this.parentElement.classList.add('placeholder');this.style.display='none';" />
+            <span class="timeline-year">2024</span>
+          </div>
+          <div class="timeline-text">
+            <h3>Năm hai</h3>
+            <p>Những người bạn, những trải nghiệm mới, những cuộc thi,...</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-photo">
+            <img src="images/năm 3.jpg" alt="Năm ba" onerror="this.parentElement.classList.add('placeholder');this.style.display='none';" />
+            <span class="timeline-year">2025</span>
+          </div>
+          <div class="timeline-text">
+            <h3>Năm ba</h3>
+            <p>Trưởng thành hơn qua những lựa chọn đi hay ở.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reverse">
+          <div class="timeline-photo">
+            <img src="images/năm 4.jpg" alt="Năm bốn" onerror="this.parentElement.classList.add('placeholder');this.style.display='none';" />
+            <span class="timeline-year">2026</span>
+          </div>
+          <div class="timeline-text">
+            <h3>Năm bốn</h3>
+            <p>Phát triển về tâm, trí, thể và những "mối tình đầu".</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============== PAGE 3: INVITATION ============== -->
+    <section class="page page--invite" id="page-3" data-page="3">
+      <div class="invite-card">
+        <div class="invite-frame">
+          <div class="corner tl"></div>
+          <div class="corner tr"></div>
+          <div class="corner bl"></div>
+          <div class="corner br"></div>
+
+          <p class="invite-eyebrow">❤ <br /><br />You are invited to graduation party of</p>
+          <p class="invite-name">Hiền Lương</p>
+          <div class="invite-divider"><span>✦</span></div>
+
+          <p class="invite-intro">
+            Your presence would mean the world to me.</p>
+          </p>
+
+          <div class="invite-info">
+            <div class="info-row">
+              <span class="info-label"><Time>Time</Time></span>
+              <span class="info-value">09:30 - 10:00 AM — Wednesday, 14/06/2026</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Location</span>
+              <span class="info-value">Hội trường H1, Đại học Thương Mại<br />79 Hồ Tùng Mậu, Cầu Giấy, Hà Nội</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Call me</span>
+              <span class="info-value">0981 827 526</span>
+            </div>
+          </div>
+            <div class="photo-gallery">
+
+              <div class="photo-frame small">
+                  <img src="images/hình center.jpg" alt="">
+              </div>
+
+              <div class="photo-frame large">
+                  <img src="images/right.jpg" alt="">
+              </div>
+
+              <div class="photo-frame small">
+                  <img src="images/left.jpg" alt="">
+              </div>
+
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PAGE 4: LỜI GỬI YÊU THƯƠNG ============== -->
+
+    <section class="page page--countdown" id="page-4" data-page="4">
+      <header class="page-header">
+        <p class="eyebrow">Gắm gửi yêu thương</p>
+        <h2>Cảm ơn người đã thức cùng tôi </h2>
+        <p class="lead">"Hành trình của lá"</p>
+      </header>
+    <div class="photolove"> 
+      <img src="images/lời yêu thương.png" alt=""> 
+    </div>
+      <div class="countdown" role="timer" aria-live="polite">
+        <div class="cd-block">
+          <div class="cd-num" id="cd-days">00</div>
+          <div class="cd-label">Ngày</div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <div class="cd-num" id="cd-hours">00</div>
+          <div class="cd-label">Giờ</div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <div class="cd-num" id="cd-mins">00</div>
+          <div class="cd-label">Phút</div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-block">
+          <div class="cd-num" id="cd-secs">00</div>
+          <div class="cd-label">Giây</div>
+        </div>
+      </div>
+
+      <p class="cd-target">
+        Lễ chính: <strong id="cd-target-text">10:30 — 24/06/2026</strong></p>
+    </section>
+
+    <!-- ============== PAGE 5: MAP ============== -->
+    <section class="page page--map" id="page-5" data-page="5">
+      <header class="page-header">
+        <p class="eyebrow">Địa điểm</p>
+        <h2>Hội trường H1 — ĐH Thương Mại</h2>
+        <p class="lead">79 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội</p>
+      </header>
+
+      <div class="map-wrap">
+        <div id="map" aria-label="Bản đồ vị trí Hội trường H1"></div>
+      </div>
+
+      <div class="map-actions">
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/21.0239488,105.775104/%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Th%C6%B0%C6%A1ng+M%E1%BA%A1i,+%C4%90.+H%E1%BB%93+T%C3%B9ng+M%E1%BA%ADu,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vietnam/@21.0292747,105.7643311,14.5z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x313454b6240401b9:0xb41bb48d633e1b80!2m2!1d105.7743341!2d21.0374581?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D_____Truong_Mai_Hall_H1">
+          🚗 Chỉ đường Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- ============== PAGE 6: WISHES ============== -->
+    <section class="page page--wishes" id="page-6" data-page="6">
+      <header class="page-header">
+        <p class="eyebrow">Lời chúc</p>
+        <h2>Mỗi lời chúc của bạn là một món quà tinh thần vô giá</h2>
+        <p class="lead">"Một hành trình không quá hoàn hảo, nhưng đủ cho mình được trải nghiệm và trưởng thành. Biết ơn và trân trọng"</p>
+      </header>
+
+      <form id="wishForm" class="wish-form" novalidate>
+        <div class="field">
+          <label for="w-name">Xin hỏi thí chủ tên gì? <span class="req">*</span></label>
+          <input id="w-name" name="name" type="text" required maxlength="80" placeholder="Ví dụ: Hiền Lương nè" />
+        </div>
+
+          <div class="field">
+            <label for="w-attend">Cho mình biết tấm lòng của bạn nhé 🙄 </label>
+            <select id="w-attend" name="attend">
+              <option value="">...</option>
+              <option>Có thể tham dự</option>
+              <option>Rất tiếc không thể tham dự</option>
+              <option>Chưa chắc chắn</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="w-message">Gửi cho mình vài điều bạn muốn nói <span class="req">*</span></label>
+          <textarea id="w-message" name="message" rows="4" required maxlength="1000" placeholder="Gửi cho mình suy nghĩ của bạn, lời khuyên bạn muốn dành cho mình nha ❤ ..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">💌 Gửi lời chúc</button>
+        </div>
+      </form>
+
+    </section>
+
+  </main>
+    <!-- ============== THANKYOU ============== -->
+  <div id="thankYou" class="thank-you" role="alert" aria-live="assertive">
+    <h1 class="thank-you-message">CẢM ƠN BẠN ĐÃ DÀNH THỜI GIAN CHO MÌNH NHA❤ </h1>
+    <div class="photo-final">
+      <img src="images/finalphoto.jpg" alt=""></div>
+  </div>
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
