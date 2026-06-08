@@ -1330,10 +1330,15 @@ body { position: relative; min-height: 100vh; overflow-x: hidden; }
   transform: rotateY(180deg);
   background: linear-gradient(180deg, #e8f0fb 0%, #ffffff 100%);
 }
+.photo-final img{
+    display:block;
+    height:220px;
+    object-fit:cover;
+    width: 300px;
+    justify-self: center;
+    margin-bottom: 40px;
 }
-
-
-
+}
 
 
 /* ============= Reduce motion ============= */
