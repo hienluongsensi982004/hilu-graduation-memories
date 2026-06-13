@@ -950,6 +950,15 @@ body { position: relative; min-height: 100vh; overflow-x: hidden; }
   justify-content: center;
   flex-wrap: wrap;
 }
+.photomap{
+    display:flex;
+    background: linear-gradient(180deg, #ffffff, #eef4fb);
+    box-shadow: var(--shadow);
+    margin-top:20px;
+    height:600px;
+    object-fit:cover;
+    justify-self: center;
+}
 
 /* ============= PAGE 6: WISHES ============= */
 .wish-form {
@@ -1337,6 +1346,15 @@ body { position: relative; min-height: 100vh; overflow-x: hidden; }
     width: 300px;
     justify-self: center;
     margin-bottom: 40px;
+}
+.photomap{
+    display:flex;
+    background: linear-gradient(180deg, #ffffff, #eef4fb);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+    height:250px;
+    object-fit:cover;
+    justify-self: center;
 }
 }
 
